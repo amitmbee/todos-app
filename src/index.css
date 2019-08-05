@@ -1,3 +1,8 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +10,81 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #606c76;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 112.0rem;
+  padding: 0 2.0rem;
+  position: relative;
+  width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.table {
+  /* Remove spacing between table cells (from Normalize.css) */
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+}
+
+
+.table td,
+.table th {
+  border-left: 1px solid #cbcbcb;/*  inner column border */
+  border-width: 0 0 0 1px;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible; /*to make ths where the title is really long work*/
+  padding: 0.5em 1em; /* cell padding */
+}
+
+.table thead {
+  background-color: #e0e0e0;
+  color: #000;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.table td {
+  background-color: transparent;
+}
+.table-odd td {
+  background-color: #f2f2f2;
+}
+
+/* nth-child selector for modern browsers */
+.table-striped tr:nth-child(2n-1) td {
+  background-color: #f2f2f2;
+}
+
+/* BORDERED TABLES */
+.table-bordered td {
+  border-bottom: 1px solid #cbcbcb;
+}
+.table-bordered tbody > tr:last-child > td {
+  border-bottom-width: 0;
+}
+
+
+/* HORIZONTAL BORDERED TABLES */
+
+.table-horizontal td,
+.table-horizontal th {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #cbcbcb;
+}
+.table-horizontal tbody > tr:last-child > td {
+  border-bottom-width: 0;
 }
