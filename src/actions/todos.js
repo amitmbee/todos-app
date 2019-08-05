@@ -1,6 +1,6 @@
 import {fetchAllTodos, createTodo, updateTodo, deleteTodo} from "services/todos"
 
-import {TODOS_FETCH_IN_PROGRESS, TODOS_FETCH_SUCCESS, TODOS_FETCH_FAILED, TODOS_FORM_SUCCESS,TODOS_FORM_IN_PROGRESS, TODOS_FORM_FAILED} from "constants/actions"
+import {TODOS_FETCH_IN_PROGRESS, TODOS_FETCH_SUCCESS, TODOS_FETCH_FAILED,TODOS_FORM_IN_PROGRESS, TODOS_FORM_FAILED} from "constants/actions"
 
 
 const setInProgress = () => ({ type : TODOS_FETCH_IN_PROGRESS });
@@ -15,12 +15,12 @@ const setListing = (data) => {
   }
 }
 
-const setDetailItem = (data) => {
-  return {
-    type: TODOS_FORM_SUCCESS,
-    payload: {data}
-  }
-}
+// const setDetailItem = (data) => {
+//   return {
+//     type: TODOS_FORM_SUCCESS,
+//     payload: {data}
+//   }
+// }
 
 const setError = ( error) => {
   return {

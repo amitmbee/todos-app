@@ -1,6 +1,6 @@
 
 // constants
-import {TODOS_FETCH_SUCCESS,TODOS_FETCH_FAILED, TODOS_FORM_IN_PROGRESS, TODOS_FORM_FAILED, TODOS_FORM_SUCCESS} from "constants/actions"
+import {TODOS_FETCH_SUCCESS,TODOS_FETCH_FAILED, TODOS_FORM_IN_PROGRESS, TODOS_FORM_FAILED} from "constants/actions"
 
 import {FAILED, SUCCESS, IN_PROGRESS} from "constants/loader";
 
@@ -31,10 +31,10 @@ const todosReducer =  (state = initialState, action = {}) => {
       return {
         ...state, formUiState: IN_PROGRESS
       }
-    case TODOS_FORM_SUCCESS:
-      return{
-        ...state, formUiState: SUCCESS, listing: [...state.listing, action.payload.data]
-      }
+    // case TODOS_FORM_SUCCESS:
+    //   return{
+    //     ...state, formUiState: SUCCESS, listing: [...state.listing, action.payload.data]
+    //   }
     case TODOS_FORM_FAILED:
       return {
         ...state, formUiState: FAILED, formErrors: action.payload.errors
