@@ -42,6 +42,10 @@ class App extends React.Component {
     this.setState({todoText: e.target.value})
   }
 
+  toggleTodoCompleted = (e) => {
+    this.setState({todoCompleted: e.target.checked});
+  }
+
   addUpdateTodo = async (e) => {
     e.preventDefault();
     if(this.state.isEditing){
@@ -107,10 +111,15 @@ class App extends React.Component {
       <div className="App container">
       <h1>Add/Update Todo</h1>
       <form onSubmit={this.addUpdateTodo}>
+      <div className="control">
         <label for="name">Todo: </label>
         <input value={this.state.todoText} onChange={this.handleTodoText} id="name" />
-        <input type="checkbox" checked={this.state.todoCompleted} />
-        <input type="submit" value="Submit" className={cx("button", { "is-loading": this.props.formUiState === IN_PROGRESS})}/>
+      </div>
+      <div className="control">
+          <label for="todo-completed">Todo Completed: </label>
+          <input type="checkbox" name="todo-completed" onChange={this.toggleTodoCompleted} checked={this.state.todoCompleted} />
+      </div>
+      <input type="submit" value="Submit" className={cx("button", { "is-loading": this.props.formUiState === IN_PROGRESS})}/>
       </form>
       <h1>All Todos</h1>
       <table className="table">
