@@ -109,7 +109,7 @@ class App extends React.Component {
       <form onSubmit={this.addUpdateTodo}>
         <label for="name">Todo: </label>
         <input value={this.state.todoText} onChange={this.handleTodoText} id="name" />
-        <input type="checkbox" value={this.state.todoCompleted} />
+        <input type="checkbox" checked={this.state.todoCompleted} />
         <input type="submit" value="Submit" className={cx("button", { "is-loading": this.props.formUiState === IN_PROGRESS})}/>
       </form>
       <h1>All Todos</h1>
