@@ -25,7 +25,7 @@ const todosReducer =  (state = initialState, action = {}) => {
       }
     case TODOS_FETCH_FAILED:
       return {
-        ...state, uiState: FAILED
+        ...state, uiState: FAILED, errors: action.payload.error
       }
     case TODOS_FORM_IN_PROGRESS:
       return {
